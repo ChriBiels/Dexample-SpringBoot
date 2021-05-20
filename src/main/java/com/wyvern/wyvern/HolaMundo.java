@@ -51,6 +51,15 @@ public class HolaMundo {
 
    }
 
+
+
+   @GetMapping("/{word}")
+   public String transforma(@PathVariable String word){
+    return word.replaceAll("ñ","ni");
+    
+
+   }
+
 }
 
 
