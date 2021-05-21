@@ -1,6 +1,10 @@
 package com.wyvern.wyvern;
 
 
+
+import com.wyvern.wyvern.service.TraduceService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,6 +63,19 @@ public class HolaMundo {
     
 
    }
+
+   @Autowired
+   TraduceService traduceService;
+
+   @GetMapping("/traduce")
+        public String traduce(){
+            String texto = traduceService.getTexto();
+            return "Palabra traducida: "+texto;
+        }
+    
+
+
+   
 
 }
 
