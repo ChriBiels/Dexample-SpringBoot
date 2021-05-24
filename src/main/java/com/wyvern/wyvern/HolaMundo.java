@@ -72,6 +72,7 @@ public class HolaMundo {
    @Autowired
    TraduceService traduceService;
 
+
    @GetMapping("/traduce/{word}")
         public String traduce(){
             String texto = traduceService.getTexto();
@@ -95,7 +96,7 @@ public class HolaMundo {
         datos.setEdad(Integer.parseInt(body.get("edad")));
         datos.setPais(body.get("pais"));
         datos.setTelefono(Integer.parseInt(body.get("telefono")));
-        DatosBDService.guardarDatosModel(datos);
+        datosBDService.guardarDatosModel(datos);
         return "Se ha guardado el formulario";
     }
 
@@ -107,7 +108,7 @@ public class HolaMundo {
  
     
     @PostMapping("/guardaManual")
-    public String guardarManual(String usuario, String nombre, String apellido, int edad, String pais, int telefono) {
+    public String guardarManual(@RequestParam String usuario, String nombre, String apellido, int edad, String pais, int telefono) {
         DatosModel datos = new DatosModel();
         datos.setUsuario(usuario);
         datos.setNombre(nombre);
@@ -115,7 +116,7 @@ public class HolaMundo {
         datos.setEdad(edad);
         datos.setPais(pais);
         datos.setTelefono(telefono);
-        DatosBDService.guardarDatosModel(datos);
+        datosBDService.guardarDatosModel(datos);
         return "Los datos han sido guardados de forma manual";
     }
 

@@ -20,7 +20,7 @@ public class DatosBDService {
 
     public DatosModel guardarDatosModel(DatosModel datos) {
 
-        return DatosRepository.save(datos);
+        return datosRepository.save(datos);
     }
 
 }
