@@ -24,11 +24,7 @@ public class HolaMundo {
 
    @RequestMapping("/")
    public String saludar(){
-       return "Elige las rutas a usar"
-       +"      "+"/contar/PALABRA"
-       +"      "+"/PALABRA"
-       +"      "+"/traduce/Palabra"
-       +"      "+"/contar/PALABRA";
+       return "Bienvenido/a";
    }
 
 
