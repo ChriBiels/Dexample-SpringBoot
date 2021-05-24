@@ -87,7 +87,7 @@ public class HolaMundo {
     }
 
 
-    @PostMapping("/guarda")
+    @PostMapping("/guarda/formulario")
     public String guardarDato(@RequestParam Map<String, String> body) {
         DatosModel datos = new DatosModel();
         datos.setUsuario(body.get("usuario"));
@@ -107,7 +107,7 @@ public class HolaMundo {
     }
  
     
-    @PostMapping("/guardaManual")
+    @PostMapping("/guardaManual/{usuario}&{nombre}&{apellido}&{edad}&{pais}&{telefono}")
     public String guardarManual(@RequestParam String usuario, String nombre, String apellido, int edad, String pais, int telefono) {
         DatosModel datos = new DatosModel();
         datos.setUsuario(usuario);
