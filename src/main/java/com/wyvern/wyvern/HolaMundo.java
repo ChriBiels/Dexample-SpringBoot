@@ -25,10 +25,10 @@ public class HolaMundo {
    @RequestMapping("/")
    public String saludar(){
        return "Elige las rutas a usar"
-       +"\n"+"/contar/PALABRA"
-       +"\n"+"/PALABRA"
-       +"\n"+"/traduce/Palabra"
-       +"\n"+"/contar/PALABRA";
+       +"      "+"/contar/PALABRA"
+       +"      "+"/PALABRA"
+       +"      "+"/traduce/Palabra"
+       +"      "+"/contar/PALABRA";
    }
 
 
